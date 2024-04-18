@@ -7,7 +7,7 @@ This repository contains the Arduino code for an advanced robotics control syste
 ## Table of Contents
 - [Installation](/Installation)
 - [Setting](/Setting)
-- [Features](/Features)
+- [Features](/Features.md)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
