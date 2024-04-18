@@ -1,1 +1,59 @@
+# Installation Guide
+
+This document provides detailed instructions on how to install the Arduino IDE and set it up for use with the Freenove ESP32-S3 WROOM CAM.
+
+## Downloading and Installing the Arduino IDE
+
+1. **Visit the Arduino Software Page:**
+   - Go to [Arduino Software Downloads](https://www.arduino.cc/en/software) to find the latest version of the Arduino IDE suitable for your operating system (Windows, macOS, Linux).
+
+2. **Download the Arduino IDE:**
+   - Select the version that matches your operating system and download it.
+
+3. **Install the Arduino IDE:**
+   - **Windows:** Run the downloaded installer and follow the on-screen instructions. You can choose between an installer and a zip file. The installer version will set up everything you need including drivers.
+   - **macOS:** Open the `.zip` file and drag the Arduino application into your Applications folder.
+
+## Setting Up the Freenove ESP32-S3 WROOM CAM
+
+1. **Connect the Freenove ESP32-S3 WROOM CAM to Your Computer:**
+   - Use a micro USB cable to connect the board to your computer.
+
+2. **Open the Arduino IDE:**
+   - Launch the Arduino IDE once the installation is complete.
+
+3. **Install ESP32 Board in Arduino IDE:**
+   - Go to `File > Preferences` in the Arduino IDE.
+   - In the Additional Board Manager URLs, add the following URL to enable support for ESP32 boards:
+     ```
+     https://dl.espressif.com/dl/package_esp32_index.json
+     ```
+   - Click "OK."
+
+4. **Install the ESP32 Board Package:**
+   - Navigate to `Tools > Board > Boards Manager`.
+   - Search for "ESP32" and find the listing "esp32 by Espressif Systems."
+   - Click "Install" to install the ESP32 board package.
+
+5. **Select Your ESP32 Board:**
+   - Go to `Tools > Board` and scroll down to find and select `ESP32S3 Dev MODULE`.
+   - Choose the specific board model, which in this case would likely be something similar to "Freenove ESP32-S3 WROOM" or a compatible option listed under the ESP32 section.
+
+6. **Select the Port:**
+   - Go to `Tools > Port` and select the COM port that the Freenove ESP32-S3 WROOM CAM is connected to. It should be labeled with the board’s name or ‘COM#’.
+
+7. **Test the Installation:**
+   - Open one of the example sketches under `File > Examples > 01.Basics > Blink`.
+   - Click the "Upload" button to compile and upload the sketch to the Freenove ESP32-S3 WROOM CAM.
+   - Ensure the onboard LED on the ESP32 board starts blinking to confirm everything is set up correctly.
+
+## Troubleshooting
+
+If you encounter any issues:
+- Ensure all cables are securely connected.
+- Verify the correct drivers are installed.
+- Make sure you selected the correct board and port in the Arduino IDE.
+- Restart the Arduino IDE and reconnect the device if problems persist.
+
+For further support, consult the [Freenove Support Forum](http://forum.freenove.com/) or the [ESP32 Forum](https://www.esp32.com/).
 
