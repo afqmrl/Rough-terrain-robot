@@ -6,8 +6,8 @@ This repository contains the Arduino code for an advanced robotics control syste
 
 ## Table of Contents
 - [Installation](./Installation)
-- [Setting](./Setting.md)
-- [Features](./Features.md)
+- [Setting](./Setting)
+- [Features](./Features)
   - [PID Control](./Features.md#pid-control)
   - [RPM Management](./Features.md#rpm-management)
   - [Camera Alignment](./Features.md#camera-alignment)
