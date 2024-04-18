@@ -1,10 +1,1 @@
-# Features Documentation
 
-This document outlines the features implemented in the robotics control system. Click on the links below to navigate to the relevant sections within this document.
-
-- [PID Control](#pid-control)
-- [RPM Management](#rpm-management)
-- [Camera Alignment](#camera-alignment)
-- [Mission Lifetime Management](#mission-lifetime-management)
-- [Mechanical Success of Charging Probe](#mechanical-success-of-charging-probe)
-- [Path Planning Algorithm](#path-planning-algorithm)
