@@ -6,7 +6,7 @@ This repository contains the Arduino code for an advanced robotics control syste
 
 ## Table of Contents
 - [Installation](#installation)
-- [Setting Up](#setting-up)
+- [Setting](#setting-up)
 - [Features](#features)
   - [PID Control](#pid-control)
   - [RPM Management](#rpm-management)
