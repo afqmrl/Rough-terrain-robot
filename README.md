@@ -5,7 +5,7 @@ Third year individual project ( The University of Manchester)
 This repository contains the Arduino code for an advanced robotics control system that includes PID control, RPM management, camera alignment, mission lifetime tracking, mechanical assessments of a charging probe, and a path planning algorithm. It is designed for educational and development purposes to showcase complex robotics functionalities.
 
 ## Table of Contents
-- [Installation](./Installation.md)
+- [Installation](./Installation)
 - [Setting](./Setting.md)
 - [Features](./Features.md)
   - [PID Control](./Features.md#pid-control)
