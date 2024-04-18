@@ -1,0 +1,68 @@
+# Pin Configuration
+
+This file outlines the pin assignments for the project hardware. Ensure each pin is connected correctly for optimal functionality.
+
+## Constants
+
+- **LED**: GPIO `2` (onboard LED).
+- **TRIG_PIN**: GPIO `3` (Ultrasonic Sensor Trigger).
+- **ECHO_PIN**: GPIO `46` (Ultrasonic Sensor Echo).
+- **SERVO_PIN**: GPIO `45` (Servo Motor).
+- **LEDS_COUNT**: `8` (Number of LEDs).
+- **LEDS_PIN**: GPIO `48` (LED Strip).
+- **CHANNEL**: `0` (PWM Channel for LEDs).
+
+## Camera Model
+
+- **CAMERA_MODEL**: `ESP32S3_EYE`
+
+## Camera Pins 
+
+-## Power and Reset
+
+- **PWDN_GPIO_NUM**: `-1` (Power down is not used)
+- **RESET_GPIO_NUM**: `-1` (Reset is not used)
+
+-## Camera Control Pins
+
+- **XCLK_GPIO_NUM**: GPIO `15` (Camera External Clock)
+- **SIOD_GPIO_NUM**: GPIO `4` (Camera Serial Data Input/Output)
+- **SIOC_GPIO_NUM**: GPIO `5` (Camera Serial Clock)
+
+-## Camera Data Pins
+
+- **Y2_GPIO_NUM**: GPIO `11` 
+- **Y3_GPIO_NUM**: GPIO `9` 
+- **Y4_GPIO_NUM**: GPIO `8`
+- **Y5_GPIO_NUM**: GPIO `10`
+- **Y6_GPIO_NUM**: GPIO `12`
+- **Y7_GPIO_NUM**: GPIO `18`
+- **Y8_GPIO_NUM**: GPIO `17`
+- **Y9_GPIO_NUM**: GPIO `16`
+
+-## Synchronization Pins
+
+- **VSYNC_GPIO_NUM**: GPIO `6` (Vertical Sync)
+- **HREF_GPIO_NUM**: GPIO `7` (Horizontal Reference Signal)
+- **PCLK_GPIO_NUM**: GPIO `13` (Pixel Clock)
+
+## Motor Pin Assignments
+
+- **Motor 1 Control Pins**:
+  - **pinI1**: GPIO `1` (Control Pin 1 for Motor 1).
+  - **pinI2**: GPIO `47` (Control Pin 2 for Motor 1).
+  - **speedpin1**: GPIO `42` (PWM Speed Regulation for Motor 1).
+
+- **Motor 2 Control Pins**:
+  - **pinI3**: GPIO `41` (Control Pin 1 for Motor 2).
+  - **pinI4**: GPIO `40` (Control Pin 2 for Motor 2).
+  - **speedpin2**: GPIO `39` (PWM Speed Regulation for Motor 2).
+
+
+
+## Usage Notes
+
+- Pins are defined using the `#define` directive for constants and direct integer assignments for motor control.
+- Please double-check the GPIO pin numbers on your ESP32-S3 board as they might differ based on the board layout.
+- The camera interface uses the SCCB (Serial Camera Control Bus) for communication, which is similar to I2C, facilitated by `SIOD_GPIO_NUM` and `SIOC_GPIO_NUM`.
+- Ensure that the GPIO pins are correctly assigned and correspond to your specific camera module and ESP32-S3 board layout.
