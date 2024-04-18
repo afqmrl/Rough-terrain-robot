@@ -2,10 +2,9 @@
 
 The robot's system encompasses several advanced features, each detailed in its own document:
 
-- [PID Control](Features/pid_control.md)
-- [RPM Management](Features/rpm_management.md)
-- [Camera Alignment](Features/camera_alignment.md)
-- [Mission Lifetime Management](Features/mission_lifetime.md)
-- [Mechanical Success of Charging Probe](Features/charging_probe.md)
-- [Path Planning Algorithm](Features/path_planning.md)
-
+  - [PID Control](Features.md/pid-control)
+  - [RPM Management](/Features.md/rpm-management)
+  - [Camera Alignment](/Features.md/camera-alignment)
+  - [Mission Lifetime Management](/Features.md/mission-lifetime-management)
+  - [Mechanical Success of Charging Probe](/Features.md/mechanical-success-of-charging-probe)
+  - [Path Planning Algorithm](/Features.md/path-planning-algorithm)
