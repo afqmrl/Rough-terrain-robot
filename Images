@@ -1,8 +1,0 @@
-# Settings Configuration
-
-Below is the layout for the ESP32S3 wroom cam:
-
-![Settings Panel Layout]("C:\Users\amiru\OneDrive\Documents\Arduino\Freenove_Basic_Starter_Kit_for_ESP32_S3-main\Freenove_Basic_Starter_Kit_for_ESP32_S3-main\ESP32S3_Pinout.png")
-
-Ensure to configure each setting according to the project specifications.
-
