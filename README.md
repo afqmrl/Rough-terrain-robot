@@ -6,17 +6,9 @@ This repository contains the Arduino code for an advanced robotics control syste
 
 ## Table of Contents
 - [Installation](/Installation)
-- [Setting](/Setting)
 - [Features](/Features.md)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## Installation
-Download and install the Arduino IDE from the [Arduino Website](https://www.arduino.cc/en/software).
-
-```bash
-# Visit the following URL to download and install the Arduino IDE
-https://www.arduino.cc/en/software
+- [Usage](/USAGE.md)
+- [Contributing](/CONTRIBUTING.md)
+- [License](/LICENSE.md)
+- [Contact](/CONTACT.md)
 
