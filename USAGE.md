@@ -1,5 +1,7 @@
 # Usage
 
+This section should explain how to use the project, including any setup necessary beyond the installation steps.
+
 ## Setup
 Describe any steps necessary to set up the project after the installation is complete. This could include setting environment variables, configuring software, or other preparatory tasks.
 
