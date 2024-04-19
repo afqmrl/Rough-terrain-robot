@@ -1,5 +1,7 @@
 # Contact
 
-If you have questions or need support regarding the project, please contact us at this email: [email@example.com](mailto:email@example.com).
+Please use the following contact information to reach out with any questions, support requests, or general inquiries about the project:
 
-You can also follow us on Twitter: [https://twitter.com/username](https://twitter.com/username)
+Email: [ouremail@address.com](mailto:ouremail@address.com)
+
+Follow us on Twitter: [@twittername](https://twitter.com/twittername)
