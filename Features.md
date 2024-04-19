@@ -2,9 +2,7 @@
 
 The robot's system encompasses several advanced features, each detailed in its own document:
 
-  - [PID Control](Features.md/pid-control)
-  - [RPM Management](/Features.md/rpm-management)
-  - [Camera Alignment](/Features.md/camera-alignment)
-  - [Mission Lifetime Management](/Features.md/mission-lifetime-management)
-  - [Mechanical Success of Charging Probe](/Features.md/mechanical-success-of-charging-probe)
-  - [Path Planning Algorithm](/Features.md/path-planning-algorithm)
+- [PID Control](https://github.com/afqmrl/Rough-terrain-robot/blob/main/Source/pid-control.ino)
+- [RPM Management](https://github.com/afqmrl/Rough-terrain-robot/blob/main/Source/path-planning-algorithm.ino)  <!-- Example link, adjust if there is a specific file for RPM Management -->
+- [Camera Alignment](https://github.com/afqmrl/Rough-terrain-robot/blob/main/Source/camera-alignment.ino)
+- [Mission Lifetime Management](https://github.com/afqmrl/Rough-terrain-robot/blob/main/Source/rough_terrain_robot.ino) <!-- Example link, adjust if there is a specific file for Mission Lifetime Management -->
