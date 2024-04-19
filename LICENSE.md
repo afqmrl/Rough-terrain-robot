@@ -1,3 +1,3 @@
 # License
 
-Include the license information for the project, specifying how it can be used by others.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
