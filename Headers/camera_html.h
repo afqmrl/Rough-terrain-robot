@@ -1,0 +1,3 @@
+#include <arduino.h>
+
+// This is the HTML template for the camera interface on the Rough Terrain Robot. Here are some basic HTML structures and...
