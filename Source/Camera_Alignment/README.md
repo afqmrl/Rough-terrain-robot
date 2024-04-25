@@ -20,7 +20,7 @@ This repository contains an Arduino sketch for running an Edge Impulse machine l
 ### Step 7
 ![Step7](Picture/Step7.png)
 ### Step 8
-![Step8](Picture/Step7.png)
+![Step8](Picture/Step8.png)
 
 
 ## User Installation Instructions
