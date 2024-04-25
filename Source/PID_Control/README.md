@@ -29,7 +29,7 @@ After setting up the hardware:
 
 ## More Technical Details
 
-The PID control system is governed by three parameters: the proportional gain (`kp`), the integral gain (`ki`), and the derivative gain (`kd`). These parameters influence the controller's response to the error between the desired and the actual speed of the motor, with each parameter playing a role in minimizing this error over time.
+The PID control system is governed by three parameters: the proportional gain (`kp`), the integral gain (`ki`), and the derivative gain (`kd`). These parameters influence the controller's response to the error between the desired and the actual speed of the motor, with each parameter playing a role in minimising this error over time.
 
 ## Known Issues/Future Improvements
 
