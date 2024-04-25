@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project encompasses an Arduino sketch designed to control a DC motor's speed with precision using a PID (Proportional, Integral, Derivative) controller. The implementation utilizes a rotary encoder for real-time feedback on the motor's position and velocity. This is especially useful for projects requiring controlled movements, such as robotic arms, automated machinery, or precise motion control in hobbyist projects.
+This project encompasses an Arduino sketch designed to control a DC motor's speed with precision using a PID (Proportional, Integral, Derivative) controller. The implementation utilises a rotary encoder for real-time feedback on the motor's position and velocity. 
 
 ## Diagram/Image/Video/Demo
 
