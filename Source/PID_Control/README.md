@@ -6,7 +6,7 @@ This project encompasses an Arduino sketch designed to control a DC motor's spee
 
 ## Diagram/Image/Video/Demo
 
-![PID Control System Diagram](assets/PID.png)
+![PID Control System Diagram](Rough-terrain-robot/assets/PID.png)
 *Add a diagram or image here that contextualizes the setup. You can also add a link to a video demonstration.*
 
 ## User Installation Instructions
