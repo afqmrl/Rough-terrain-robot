@@ -9,17 +9,17 @@ This repository contains an Arduino sketch for running an Edge Impulse machine l
 ![Step1](Picture/Step1.png)
 ### Data Lablelling
 ![Step2](Picture/Step2.png)
-### Step 3
+### Labelling Sequence
 ![Step3](Picture/Step3.png)
-### Step 4
+### Picture formatting
 ![Step4](Picture/Step4.png)
-### Step 5
+### Parameters
 ![Step4](Picture/Step5.png)
-### Step 6
+### Model Train
 ![Step6](Picture/Step6.png)
-### Step 7
+### Model Result
 ![Step7](Picture/Step7.png)
-### Step 8
+### Deployment
 ![Step8](Picture/Step8.png)
 
 
