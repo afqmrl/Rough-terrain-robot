@@ -1,181 +1,10 @@
-// #include "String.h"
-// #include "EEPROM.h"
-// #include "Freenove_WS2812_Lib_for_ESP32.h" 
-// #include <charging_dock_inferencing.h>
-// #include "edge-impulse-sdk/dsp/image/image.hpp"
-// #include <WiFi.h>
-// #include <WebServer.h>
-// #include "img_converters.h"
-// #include "Arduino.h"
-// #include <s3servo.h>
-// #include "index_html.h"
-// #include "Config.h"
-// #include "CameraConfig.h"
-// #include "Camera_detection.h"
-// #include "camera_html.h"
-
-
-
-
-
-
-// void setup() {
-//      if (!EEPROM.begin(EEPROM_SIZE)) {
-//         Serial.println("Failed to initialise EEPROM");
-//         return;
-//     }
-//   pinMode(LED, OUTPUT);
-//   Serial.begin(115200);
-//   pinMode(pinI1,OUTPUT);//define this port as output
-//   pinMode(pinI2,OUTPUT);
-//   pinMode(speedpin1,OUTPUT);
-//   pinMode(pinI3,OUTPUT);//define this port as output
-//   pinMode(pinI4,OUTPUT);
-//   pinMode(speedpin2,OUTPUT);
-//   strip.begin();
-//   setupUltrasonic();
-//   myServo.attach(SERVO_PIN);
-
-
-  
-//   // Setup WiFi
-//   // 
-  
-
-//   WiFi.begin(ssid, password);  // Connect to the existing network
-
-//     while (WiFi.status() != WL_CONNECTED) {
-//         delay(500);
-//         Serial.print(".");
-//     }
-
-//     Serial.println("");
-//     Serial.print("Connected to WiFi network with IP Address: ");
-//     Serial.println(WiFi.localIP());
-
-
-  
-//    server.on("/", HTTP_GET, []() {
-//     server.send(200, "text/html", index_html);
-//   });
-//   server.on("/camera", HTTP_GET, []() {
-//     server.send(200, "text/html", camera_html); // Serve the camera stream page
-//   });
-//   server.on("/stream", HTTP_GET, handleStream);
-//   server.on("/command", HTTP_GET, handleCommand); // Consolidated command handler
-  
-
-
-
-
-//      server.on("/camera-output", HTTP_GET, []() { // Camera output handler
-//         if (cameraDetectionResults.isEmpty()) {
-//             server.send(204); // No Content
-//         } else {
-//             server.send(200, "text/plain", cameraDetectionResults);
-            
-//         }
-//     });
-
- 
-
-//   server.begin();
-
-//   while (!Serial);
-//     Serial.println("Edge Impulse Inferencing Demo");
-//     if (ei_camera_init() == false) {
-//         ei_printf("Failed to initialize Camera!\r\n");
-//     }
-//     else {
-//         ei_printf("Camera initialized\r\n");
-//     }
-
-//     ei_printf("\nStarting continious inference in 2 seconds...\n");
-//     ei_sleep(2000);
-
-   
-
-// }
-
-// void loop() {
-
-
-//   server.handleClient();
- 
-//   // cameradetection();
-
- 
-// }
-
-
-
-// #if !defined(EI_CLASSIFIER_SENSOR) || EI_CLASSIFIER_SENSOR != EI_CLASSIFIER_SENSOR_CAMERA
-// #error "Invalid model for current sensor"
-// #endif
-
-// void handleStream() {
-//     WiFiClient client = server.client();
-//     camera_fb_t* fb = nullptr;
-//     size_t _jpg_buf_len = 0;
-//     uint8_t* _jpg_buf = nullptr;
-    
-//     client.println("HTTP/1.1 200 OK");
-//     client.println("Content-Type: multipart/x-mixed-replace; boundary=" PART_BOUNDARY);
-//     client.println();
-
-//     while (client.connected()) {
-
-//         fb = esp_camera_fb_get();
-//         if (!fb) {
-//             Serial.println("Camera capture failed");
-//             continue;
-//         }
-
-//         if (fb->format != PIXFORMAT_JPEG) {
-//             bool converted = frame2jpg(fb, 80, &_jpg_buf, &_jpg_buf_len);
-//             esp_camera_fb_return(fb);
-//             if (!converted) {
-//                 Serial.println("JPEG conversion failed");
-//                 continue;
-//             }
-//         } else {
-//             _jpg_buf = fb->buf;
-//             _jpg_buf_len = fb->len;
-//         }
-
-//         client.print(_STREAM_BOUNDARY);
-//         client.printf(_STREAM_PART, _jpg_buf_len);
-//         client.write(_jpg_buf, _jpg_buf_len);
-        
-//         if (fb->format != PIXFORMAT_JPEG) {
-//             free(_jpg_buf);
-//         }
-        
-//         esp_camera_fb_return(fb);
-        
-//     }
-// }
-
-// void handleCommand() {
-//   if (server.hasArg("act")) {
-//     String command = server.arg("act");
-//     controlMotors(command);
-
-//     command=" ";
-//     server.send(200, "text/plain", "Command received: " + command);
-//   } else {
-//     server.send(400, "text/plain", "Bad Request: Missing 'act' parameter");
-//   }
-// }
-
 #include "String.h"
 #include "EEPROM.h"
-#include "Freenove_WS2812_Lib_for_ESP32.h"
+#include "Freenove_WS2812_Lib_for_ESP32.h" 
 #include <charging_dock_inferencing.h>
 #include "edge-impulse-sdk/dsp/image/image.hpp"
 #include <WiFi.h>
-#include <AsyncTCP.h>
-#include <ESPAsyncWebServer.h>
+#include <WebServer.h>
 #include "img_converters.h"
 #include "Arduino.h"
 #include <s3servo.h>
@@ -185,173 +14,159 @@
 #include "Camera_detection.h"
 #include "camera_html.h"
 
-AsyncWebServer server(80);
+
+
+
+
 
 void setup() {
-    if (!EEPROM.begin(EEPROM_SIZE)) {
+     if (!EEPROM.begin(EEPROM_SIZE)) {
         Serial.println("Failed to initialise EEPROM");
         return;
     }
-    pinMode(LED, OUTPUT);
-    Serial.begin(115200);
-    pinMode(pinI1, OUTPUT);
-    pinMode(pinI2, OUTPUT);
-    pinMode(speedpin1, OUTPUT);
-    pinMode(pinI3, OUTPUT);
-    pinMode(pinI4, OUTPUT);
-    pinMode(speedpin2, OUTPUT);
-    strip.begin();
-    setupUltrasonic();
-    myServo.attach(SERVO_PIN);
+  pinMode(LED, OUTPUT);
+  Serial.begin(115200);
+  pinMode(pinI1,OUTPUT);//define this port as output
+  pinMode(pinI2,OUTPUT);
+  pinMode(speedpin1,OUTPUT);
+  pinMode(pinI3,OUTPUT);//define this port as output
+  pinMode(pinI4,OUTPUT);
+  pinMode(speedpin2,OUTPUT);
+  strip.begin();
+  setupUltrasonic();
+  myServo.attach(SERVO_PIN);
 
-    // Setup WiFi
-    WiFi.begin(ssid, password);
+
+  
+  // Setup WiFi
+  // 
+  
+
+  WiFi.begin(ssid, password);  // Connect to the existing network
+
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
     }
+
     Serial.println("");
     Serial.print("Connected to WiFi network with IP Address: ");
     Serial.println(WiFi.localIP());
 
-    // Define Web Server Handlers
-    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
-        request->send(200, "text/html", index_html);
-    });
-    // server.on("/camera", HTTP_GET, [](AsyncWebServerRequest *request) {
-    //     request->send(200, "text/html", camera_html);
-    // });
-    server.on("/stream", HTTP_GET, handleStream);
-    server.on("/single", HTTP_GET, handleSingleFrame);
+
+  
+   server.on("/", HTTP_GET, []() {
+    server.send(200, "text/html", index_html);
+  });
+  server.on("/camera", HTTP_GET, []() {
+    server.send(200, "text/html", camera_html); // Serve the camera stream page
+  });
+  server.on("/stream", HTTP_GET, handleStream);
+  server.on("/command", HTTP_GET, handleCommand); // Consolidated command handler
+  
 
 
-    server.on("/command", HTTP_GET, [](AsyncWebServerRequest *request) {
-        handleCommand(request);
-    });
-    server.on("/camera-output", HTTP_GET, [](AsyncWebServerRequest *request) {
+
+
+     server.on("/camera-output", HTTP_GET, []() { // Camera output handler
         if (cameraDetectionResults.isEmpty()) {
-            request->send(204);
+            server.send(204); // No Content
         } else {
-            request->send(200, "text/plain", cameraDetectionResults);
+            server.send(200, "text/plain", cameraDetectionResults);
+            
         }
     });
 
-    server.begin();
+ 
+
+  server.begin();
+
+  while (!Serial);
     Serial.println("Edge Impulse Inferencing Demo");
-    if (!ei_camera_init()) {
+    if (ei_camera_init() == false) {
         ei_printf("Failed to initialize Camera!\r\n");
-    } else {
+    }
+    else {
         ei_printf("Camera initialized\r\n");
     }
-    ei_printf("\nStarting continuous inference in 2 seconds...\n");
+
+    ei_printf("\nStarting continious inference in 2 seconds...\n");
     ei_sleep(2000);
+
+   
+
 }
 
 void loop() {
-    // Asynchronous server does not need to call handleClient()
+
+
+  server.handleClient();
+ 
+  // cameradetection();
+
+ 
 }
 
-void handleStream(AsyncWebServerRequest *request) {
-    request->sendChunked("multipart/x-mixed-replace;boundary=" PART_BOUNDARY, [](uint8_t *buffer, size_t maxLen, size_t index) -> size_t {
-        static camera_fb_t *fb = nullptr;
-        static size_t _jpg_buf_len = 0;
-        static uint8_t *_jpg_buf = nullptr;
 
-        Serial.printf("Handling stream, index: %d\n", index); // Debug output
 
-        if (!index) { // If index is 0, start a new frame
-            if (fb) {
-                Serial.println("Returning previous frame buffer.");
-                if (fb->format != PIXFORMAT_JPEG) {
-                    Serial.println("Freeing non-JPEG buffer.");
-                    free(_jpg_buf);
-                }
-                esp_camera_fb_return(fb);
-            }
-            fb = esp_camera_fb_get();
-            if (!fb) {
-                Serial.println("Camera capture failed");
-                return 0;
-            }
+#if !defined(EI_CLASSIFIER_SENSOR) || EI_CLASSIFIER_SENSOR != EI_CLASSIFIER_SENSOR_CAMERA
+#error "Invalid model for current sensor"
+#endif
 
-            if (fb->format != PIXFORMAT_JPEG) {
-                bool converted = frame2jpg(fb, 80, &_jpg_buf, &_jpg_buf_len);
-                if (!converted) {
-                    Serial.println("JPEG conversion failed");
-                    esp_camera_fb_return(fb);
-                    fb = nullptr;
-                    return 0;
-                }
-                Serial.println("Frame converted to JPEG.");
-            } else {
-                _jpg_buf = fb->buf;
-                _jpg_buf_len = fb->len;
-                Serial.println("Frame is JPEG.");
-            }
-            Serial.printf("Frame buffer length: %d bytes\n", _jpg_buf_len);
+void handleStream() {
+    WiFiClient client = server.client();
+    camera_fb_t* fb = nullptr;
+    size_t _jpg_buf_len = 0;
+    uint8_t* _jpg_buf = nullptr;
+    
+    client.println("HTTP/1.1 200 OK");
+    client.println("Content-Type: multipart/x-mixed-replace; boundary=" PART_BOUNDARY);
+    client.println();
+
+    while (client.connected()) {
+
+        fb = esp_camera_fb_get();
+        if (!fb) {
+            Serial.println("Camera capture failed");
+            continue;
         }
 
-        size_t willSend = (maxLen > _jpg_buf_len - index) ? _jpg_buf_len - index : maxLen;
-        memcpy(buffer, _jpg_buf + index, willSend);
-        Serial.printf("Sending %d bytes.\n", willSend);
-
-        if (index + willSend == _jpg_buf_len) {
-            if (fb->format != PIXFORMAT_JPEG) {
-                Serial.println("Freeing converted JPEG buffer.");
-                free(_jpg_buf);
-            }
-            Serial.println("Returning frame buffer to driver.");
+        if (fb->format != PIXFORMAT_JPEG) {
+            bool converted = frame2jpg(fb, 80, &_jpg_buf, &_jpg_buf_len);
             esp_camera_fb_return(fb);
-            fb = nullptr;
-            Serial.println("Frame transmission complete.");
-            return 0; // End of frame
+            if (!converted) {
+                Serial.println("JPEG conversion failed");
+                continue;
+            }
+        } else {
+            _jpg_buf = fb->buf;
+            _jpg_buf_len = fb->len;
         }
-        return willSend;
-    });
-}
 
-
-
-
-
-
-
-void handleSingleFrame(AsyncWebServerRequest *request) {
-    camera_fb_t *fb = esp_camera_fb_get();
-    if (!fb) {
-        Serial.println("Camera capture failed");
-        request->send(500, "text/plain", "Failed to capture image");
-    } else {
-        // Correctly cast the buffer pointer when sending the image
-        request->send_P(200, "image/jpeg", (const uint8_t *)fb->buf, fb->len);
+        client.print(_STREAM_BOUNDARY);
+        client.printf(_STREAM_PART, _jpg_buf_len);
+        client.write(_jpg_buf, _jpg_buf_len);
+        
+        if (fb->format != PIXFORMAT_JPEG) {
+            free(_jpg_buf);
+        }
+        
         esp_camera_fb_return(fb);
+        
     }
 }
 
+void handleCommand() {
+  if (server.hasArg("act")) {
+    String command = server.arg("act");
+    controlMotors(command);
 
-
-
-void handleCommand(AsyncWebServerRequest *request) {
-    if (request->hasParam("act")) {  // Check without specifying 'true' to look in both POST and GET requests
-        AsyncWebParameter* p = request->getParam("act");
-        String command = p->value();
-        controlMotors(command);
-        Serial.println("Command received: " + command);
-        request->send(200, "text/plain", "Command received: " + command);
-    } else {
-        Serial.println("Bad Request: No 'act' parameter found.");
-        // Enhanced logging to see what's being passed
-        int params = request->params();
-        for (int i = 0; i < params; i++) {
-            AsyncWebParameter* p = request->getParam(i);
-            Serial.println("Param " + String(i) + ": " + p->name() + " = " + p->value());
-        }
-        request->send(400, "text/plain", "Bad Request: Missing 'act' parameter");
-    }
+    command=" ";
+    server.send(200, "text/plain", "Command received: " + command);
+  } else {
+    server.send(400, "text/plain", "Bad Request: Missing 'act' parameter");
+  }
 }
-
-
-
 
 
 void setupUltrasonic() {
