@@ -1,4 +1,4 @@
-# ESP32 Camera Robot Docking System
+# Camera Robot Docking System
 
 ## Introduction
 
