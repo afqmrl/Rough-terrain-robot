@@ -8,7 +8,7 @@ This repository contains an Arduino sketch for running an Edge Impulse machine l
 
 ![Step1](Picture/Step1.png)
 
-*Replace `assets/camera-setup.jpg` with the actual path to your diagram or image that visualizes the camera setup.*
+
 
 ## User Installation Instructions
 
