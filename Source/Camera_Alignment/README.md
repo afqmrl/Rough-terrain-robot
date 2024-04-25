@@ -4,9 +4,9 @@
 
 This repository contains an Arduino sketch for running an Edge Impulse machine learning model on an ESP32-based camera module. The sketch captures images from the camera, runs them through an Edge Impulse inference model, and outputs the results. This application is ideal for IoT devices and edge computing scenarios that require real-time image classification or object detection.
 
-## Diagram/Image/Video/Demo
+## Example
 
-![Edge Impulse Camera Setup](assets/camera-setup.jpg)
+![Step1](Picture/Step1.png)
 
 *Replace `assets/camera-setup.jpg` with the actual path to your diagram or image that visualizes the camera setup.*
 
